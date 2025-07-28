@@ -27,3 +27,18 @@ body {
   font-family: var(--font-sans), sans-serif;
 }
 
+/* zajišťuje, že není žádné černé pozadí pod vlnkou */
+header {
+  background: none;
+}
+
+/* max-šířka kontejneru, dole můžete upravit podle návrhu */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* (volitelné) drobný stín pod navbar na dekoraci */
+header nav {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
