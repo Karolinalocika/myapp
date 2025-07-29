@@ -34,13 +34,11 @@ export default function Navbar() {
 
   return (
     <>
-      
-
       <nav className={`${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-xl border-b border-white/20' 
+          ? 'bg-white/10 backdrop-blur-md shadow-lg' 
           : 'bg-transparent backdrop-blur-sm'
-      } sticky top-0 z-50 transition-all duration-300 ease-out`}>
+      } fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
@@ -53,11 +51,7 @@ export default function Navbar() {
                 <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
-                <div className={`text-2xl font-bold tracking-tight transition-all duration-300 ${
-                  isScrolled 
-                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-sky-500'
-                    : 'text-white drop-shadow-lg'
-                }`}>
+                <div className="text-2xl font-bold tracking-tight transition-all duration-300 text-white drop-shadow-lg">
                   Karolína
                 </div>
               </button>
@@ -69,11 +63,7 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-2 rounded-2xl text-sm font-medium transition-all duration-300 ease-out hover:scale-105 backdrop-blur-sm border border-transparent ${
-                    isScrolled
-                      ? 'text-slate-700 hover:text-slate-900 hover:bg-white/80 hover:shadow-lg hover:border-white/40'
-                      : 'text-white hover:text-white hover:bg-white/20 hover:shadow-lg hover:border-white/30 drop-shadow-sm'
-                  }`}
+                  className="px-4 py-2 rounded-2xl text-sm font-medium transition-all duration-300 ease-out hover:scale-105 backdrop-blur-sm border border-transparent text-white hover:text-white hover:bg-white/20 hover:shadow-lg hover:border-white/30 drop-shadow-sm"
                 >
                   {item.name}
                 </a>
@@ -94,11 +84,7 @@ export default function Navbar() {
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
-                className={`p-2.5 rounded-xl transition-all duration-200 backdrop-blur-sm border shadow-lg ${
-                  isScrolled
-                    ? 'text-slate-600 hover:text-slate-800 hover:bg-white/80 border-white/30'
-                    : 'text-white hover:text-white hover:bg-white/20 border-white/30'
-                }`}
+                className="p-2.5 rounded-xl transition-all duration-200 backdrop-blur-sm border shadow-lg text-white hover:text-white hover:bg-white/20 border-white/30"
               >
                 {isMenuOpen ? (
                   <X className="h-5 w-5" />
@@ -116,13 +102,13 @@ export default function Navbar() {
             ? 'max-h-96 opacity-100' 
             : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
-          <div className="bg-white/90 backdrop-blur-lg border-t border-white/20 shadow-2xl">
+          <div className="bg-white/10 backdrop-blur-lg border-t border-white/20 shadow-2xl">
             <div className="px-4 py-6 space-y-3">
               {menuItems.map((item, index) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`block text-slate-700 hover:text-slate-900 hover:bg-white/90 px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg border border-transparent hover:border-white/40 ${
+                  className={`block text-white hover:text-white hover:bg-white/20 px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg border border-transparent hover:border-white/40 drop-shadow-sm ${
                     isMenuOpen ? 'animate-in slide-in-from-top-2' : ''
                   }`}
                   style={{ animationDelay: `${index * 50}ms` }}
