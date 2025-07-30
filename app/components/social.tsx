@@ -31,7 +31,6 @@ export default function ModernSocialProof() {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-sky-50 relative overflow-hidden" id="reference">
-      
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-16 w-64 h-64 bg-gradient-to-br from-pink-100 to-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
@@ -40,23 +39,19 @@ export default function ModernSocialProof() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-white/20 mb-6">
             <Heart className="w-4 h-4 text-pink-500 mr-2" />
             <span className="text-sm font-medium text-slate-700">Spokojenost klientů</span>
           </div>
-          
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
             Zkušenosti mých klientů
           </h2>
-          
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-            Každý spokojený klient je pro mě potvrzením, že má práce má smysl. 
+          <p className="text-xl text-slate-700 max-w-3xl mx-auto mb-8">
+            Každý spokojený klient je pro mě potvrzením, že má práce má smysl.
             Podívejte se, co říkají o naší spolupráci.
           </p>
-
           {/* Overall Rating */}
           <div className="flex items-center justify-center space-x-8 mb-8">
             <div className="text-center">
@@ -66,12 +61,12 @@ export default function ModernSocialProof() {
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <div className="text-slate-600 text-sm">Průměrné hodnocení</div>
+              <div className="text-slate-700 text-sm">Průměrné hodnocení</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-slate-900 mb-1">50+</div>
               <Users className="w-8 h-8 text-purple-500 mx-auto mb-2" />
-              <div className="text-slate-600 text-sm">Spokojených klientů</div>
+              <div className="text-slate-700 text-sm">Spokojených klientů</div>
             </div>
           </div>
         </div>
@@ -87,19 +82,16 @@ export default function ModernSocialProof() {
               <div className={`absolute top-6 right-6 p-2 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg opacity-80 group-hover:opacity-100 transition-opacity`}>
                 <Quote className="w-5 h-5 text-white" />
               </div>
-
               {/* Rating Stars */}
               <div className="flex mb-6">
                 {[...Array(item.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-
               {/* Testimonial Text */}
               <blockquote className="text-slate-700 text-lg leading-relaxed mb-8 italic">
                 "{item.text}"
               </blockquote>
-
               {/* Client Info */}
               <div className="flex items-center space-x-4 pt-6 border-t border-slate-200/50">
                 <div className="relative">
@@ -114,10 +106,9 @@ export default function ModernSocialProof() {
                 </div>
                 <div>
                   <p className="text-slate-900 font-semibold text-lg">{item.name}</p>
-                  <p className="text-slate-600 text-sm">{item.role}</p>
+                  <p className="text-slate-700 text-sm">{item.role}</p>
                 </div>
               </div>
-
               {/* Hover Glow Effect */}
               <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}></div>
             </div>
@@ -130,16 +121,22 @@ export default function ModernSocialProof() {
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
               Staňte se dalším spokojeným klientem
             </h3>
-            <p className="text-slate-600 mb-6">
+            <p className="text-slate-700 mb-6">
               Pojďme společně vytvořit něco výjimečného pro vaši značku
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <a
+                href="/kontakt"
+                className="px-8 py-4 bg-[linear-gradient(40deg,theme(colors.fuchsia.300),theme(colors.purple.400),theme(colors.fuchsia.500))] text-[#001336] rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
                 Začněme spolupráci
-              </button>
-              <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl border border-white/40 transition-all duration-300 transform hover:scale-105 hover:bg-white">
+              </a>
+              <a
+                href="/portfolio"
+                className="px-8 py-4 bg-white/80 backdrop-blur-sm text-[#001336] rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl border border-white/40 transition-all duration-300 transform hover:scale-105 hover:bg-white"
+              >
                 Podívat se na portfolio
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -147,3 +144,4 @@ export default function ModernSocialProof() {
     </section>
   );
 }
+

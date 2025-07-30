@@ -11,7 +11,6 @@ export default function Navbar() {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,20 +24,18 @@ export default function Navbar() {
   };
 
   const menuItems = [
-    { name: 'Domů', href: '#home' },
-    { name: 'O mně', href: '#about' },
-    { name: 'Služby', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Reference', href: '#reference' }
+    { name: 'Domů', href: '/' },
+    { name: 'O mně', href: '/o-mne' },
+    { name: 'Ceník', href: '/cenik' },
+    { name: 'Portfolio', href: '/portfolio' },
   ];
 
   return (
     <>
-      <nav className={`${
-        isScrolled 
+      <nav className={`${isScrolled 
           ? 'bg-white/10 backdrop-blur-md shadow-lg' 
           : 'bg-transparent backdrop-blur-sm'
-      } fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out`}>
+        } fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
@@ -48,11 +45,11 @@ export default function Navbar() {
                 onClick={handleLogoClick}
                 className="group flex items-center space-x-2 cursor-pointer transition-all duration-300 hover:scale-105"
               >
-                <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="p-2 bg-[linear-gradient(40deg,theme(colors.fuchsia.300),theme(colors.purple.400),theme(colors.fuchsia.500))] rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-2xl font-bold tracking-tight transition-all duration-300 text-white drop-shadow-lg">
-                  Karolína
+                <div className="text-2xl font-bold tracking-tight transition-all duration-300 text-fuchsia-400 drop-shadow-lg">
+                  Karolína J. K.
                 </div>
               </button>
             </div>
@@ -63,7 +60,7 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 rounded-2xl text-sm font-medium transition-all duration-300 ease-out hover:scale-105 backdrop-blur-sm border border-transparent text-white hover:text-white hover:bg-white/20 hover:shadow-lg hover:border-white/30 drop-shadow-sm"
+                  className="px-4 py-2 rounded-2xl text-sm font-medium transition-all duration-300 ease-out hover:scale-105 backdrop-blur-sm border border-white/30 text-fuchsia-400 hover:text-fuchsia-400 hover:ring-2 hover:ring-fuchsia-400 hover:shadow-lg drop-shadow-sm"
                 >
                   {item.name}
                 </a>
@@ -73,8 +70,8 @@ export default function Navbar() {
             {/* CTA Button Desktop */}
             <div className="hidden md:block">
               <a 
-                href="#kontakt"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2.5 rounded-2xl text-sm font-semibold transition-all duration-300 ease-out transform hover:scale-105 shadow-lg hover:shadow-xl border border-white/20 inline-flex items-center space-x-2"
+                href="/kontakt"
+                className="bg-[linear-gradient(40deg,theme(colors.fuchsia.300),theme(colors.purple.400),theme(colors.fuchsia.500))] hover:from-purple-600 hover:to-pink-600 text-[#001336] px-6 py-2.5 rounded-2xl text-sm font-semibold transition-all duration-300 ease-out transform hover:scale-105 shadow-lg hover:shadow-xl border border-white/20 inline-flex items-center space-x-2"
               >
                 <span>Kontaktovat</span>
               </a>
@@ -84,7 +81,7 @@ export default function Navbar() {
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
-                className="p-2.5 rounded-xl transition-all duration-200 backdrop-blur-sm border shadow-lg text-white hover:text-white hover:bg-white/20 border-white/30"
+                className="p-2.5 rounded-xl transition-all duration-200 backdrop-blur-sm border shadow-lg text-fuchsia-400 hover:text-fuchsia-400 hover:bg-white/20 border-white/30"
               >
                 {isMenuOpen ? (
                   <X className="h-5 w-5" />
@@ -108,7 +105,7 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`block text-white hover:text-white hover:bg-white/20 px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg border border-transparent hover:border-white/40 drop-shadow-sm ${
+                  className={`block px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300 ease-out border border-white/30 bg-white text-fuchsia-400 hover:text-fuchsia-400 hover:ring-2 hover:ring-fuchsia-400 hover:shadow-lg transform hover:scale-[1.02] drop-shadow-sm ${
                     isMenuOpen ? 'animate-in slide-in-from-top-2' : ''
                   }`}
                   style={{ animationDelay: `${index * 50}ms` }}
@@ -122,7 +119,7 @@ export default function Navbar() {
               <div className="pt-4">
                 <a 
                   href="#kontakt"
-                  className="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-3.5 rounded-2xl text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] border border-white/20 text-center"
+                  className="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-[#001336] px-4 py-3.5 rounded-2xl text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] border border-white/20 text-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Kontaktovat

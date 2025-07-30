@@ -1,109 +1,122 @@
-import React from "react";
+import React from 'react';
+import { Feather, Instagram, FileText, Palette, Sparkles, ArrowRight } from 'lucide-react';
 
-export default function Pricing() {
+export default function PricingStyledSection() {
+  const categories = [
+    {
+      title: 'Ilustrace na míru',
+      icon: Feather,
+      gradient: 'from-purple-500 to-pink-500',
+      hoverGradient: 'from-purple-600 to-pink-600',
+      items: [
+        { label: 'Jednoduchá ilustrace (1 motiv)', price: 'od 2 500 Kč' },
+        { label: 'Komplexní ilustrace (více prvků, pozadí)', price: 'od 5 000 Kč' },
+        { label: 'Série ilustrací (např. 3–5 prvků)', price: 'od 9 000 Kč' },
+      ],
+    },
+    {
+      title: 'Obsah pro sociální sítě',
+      icon: Instagram,
+      gradient: 'from-pink-500 to-rose-500',
+      hoverGradient: 'from-pink-600 to-rose-600',
+      items: [
+        { label: 'Grafika pro příspěvek/stories (1 ks)', price: 'od 1 000 Kč' },
+        { label: 'Balíček 5 příspěvků (vizuální série)', price: 'od 2 900 Kč' },
+        { label: 'Šablona v Affinity (editable)', price: 'od 1 800 Kč' },
+      ],
+    },
+    {
+      title: 'Prvky pro weby / e-shopy',
+      icon: FileText,
+      gradient: 'from-indigo-500 to-purple-500',
+      hoverGradient: 'from-indigo-600 to-purple-600',
+      items: [
+        { label: 'Ikonky nebo malé prvky (1–5 ks)', price: 'od 1 500 Kč' },
+        { label: 'Obrázky do sekcí webu (např. hero)', price: 'od 3 500 Kč' },
+        { label: 'Sada pro celý web (6–10 prvků)', price: 'od 8 500 Kč' },
+      ],
+    },
+    {
+      title: 'Vizuální identita & branding',
+      icon: Palette,
+      gradient: 'from-sky-500 to-cyan-500',
+      hoverGradient: 'from-sky-600 to-cyan-600',
+      items: [
+        { label: 'Ilustrované logo', price: 'od 5 000 Kč' },
+        { label: 'Mini branding (logo + barvy + motivy)', price: 'od 12 000 Kč' },
+        { label: 'Moodboard / stylová paleta', price: 'od 3 000 Kč' },
+      ],
+    },
+  ];
+
   return (
-    <section className="py-20 px-6 bg-white text-gray-800">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4">Ceník služeb</h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
-          Orientační ceny za kvalitní ilustrace, grafiku a vizuální komunikaci.
-          Konečná cena se odvíjí od rozsahu a požadavků konkrétní zakázky.
-        </p>
-
-        <div className="space-y-16">
-          {/* Ilustrace na míru */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">🎨 Ilustrace na míru</h3>
-            <ul className="space-y-2">
-              <li className="flex justify-between border-b py-2">
-                <span>Jednoduchá ilustrace (1 motiv)</span>
-                <span>od 2 500 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Komplexní ilustrace (více prvků, pozadí)</span>
-                <span>od 5 000 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Série ilustrací (např. 3–5 prvků)</span>
-                <span>od 9 000 Kč</span>
-              </li>
-            </ul>
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden" id="cenik">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-white/20 mb-4">
+            <Sparkles className="w-4 h-4 text-purple-500 mr-2" />
+            <span className="text-sm font-medium text-[#001336]">Ceník služeb</span>
           </div>
-
-          {/* Obsah pro sociální sítě */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">🛍️ Obsah pro sociální sítě</h3>
-            <ul className="space-y-2">
-              <li className="flex justify-between border-b py-2">
-                <span>Grafika pro příspěvek/stories (1 ks)</span>
-                <span>od 1 000 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Balíček 5 příspěvků (vizuální série)</span>
-                <span>od 2 900 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Šablona ve Canva / Figma (editable)</span>
-                <span>od 1 800 Kč</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Ručně kreslené prvky pro weby */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">🖋️ Prvky pro weby / e-shopy</h3>
-            <ul className="space-y-2">
-              <li className="flex justify-between border-b py-2">
-                <span>Ikonky nebo malé prvky (1–5 ks)</span>
-                <span>od 1 500 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Obrázky do sekcí webu (např. hero)</span>
-                <span>od 3 500 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Sada pro celý web (6–10 prvků)</span>
-                <span>od 8 500 Kč</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Vizuální identita */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">🎭 Vizuální identita & branding</h3>
-            <ul className="space-y-2">
-              <li className="flex justify-between border-b py-2">
-                <span>Ilustrované logo</span>
-                <span>od 5 000 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Mini branding (logo + barvy + motivy)</span>
-                <span>od 12 000 Kč</span>
-              </li>
-              <li className="flex justify-between border-b py-2">
-                <span>Moodboard / stylová paleta</span>
-                <span>od 3 000 Kč</span>
-              </li>
-            </ul>
-          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#001336] mb-4">
+            Orientační ceny
+          </h2>
+          <p className="text-center text-[#001336] mb-12">
+            za ilustrace, grafiku a vizuální komunikaci. Konečná cena se odvíjí od rozsahu a požadavků konkrétní zakázky či předchozí domluvy.
+          </p>
         </div>
 
-        {/* Informace o cenách a individuálním přístupu */}
-        <div className="mt-16 text-center text-sm text-gray-500">
-          Ceny jsou bez DPH. Pro přesnou kalkulaci mě prosím kontaktujte.
+        {/* Categories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {categories.map((cat, idx) => {
+            const Icon = cat.icon;
+            return (
+              <div
+                key={idx}
+                className="group relative p-8 bg-white shadow-lg rounded-3xl border border-gray-100 hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="space-y-6">
+                  <div
+                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${cat.gradient} shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110`}
+                  >
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 group-hover:text-slate-800 transition-colors">
+                    {cat.title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {cat.items.map((item, idy) => (
+                      <li key={idy} className="flex justify-between border-b py-2">
+                        <span className="text-[#001336]">{item.label}</span>
+                        <span className="text-[#001336]">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-4">
+                    <a
+                      href="/kontakt"
+                      className={`inline-flex items-center text-transparent bg-clip-text bg-gradient-to-r ${cat.gradient} font-semibold group-hover:text-[#001336] transition-all duration-300`}
+                    >
+                      Zadat poptávku
+                      <ArrowRight className="ml-2 w-4 h-4 text-purple-500 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+                <div
+                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${cat.hoverGradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
+                ></div>
+              </div>
+            );
+          })}
         </div>
 
-        <div className="mt-6 text-center text-base text-gray-700">
-          Máte specifický požadavek nebo jasně daný rozpočet? Ozvěte se – společně najdeme řešení na míru vašemu projektu i budgetu.
-        </div>
-
-        {/* CTA sekce */}
-        <div className="mt-8 text-center">
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
           <a
-            href="/kontakt" // uprav podle skutečné sekce nebo odkazu
-            className="inline-block bg-black text-white px-6 py-3 rounded-xl text-sm font-medium hover:bg-gray-800 transition"
+            href="/kontakt"
+            className="px-8 py-4 bg-white/80 backdrop-blur-sm text-[#001336] rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl border border-white/40 transition-all duration-300 transform hover:scale-105 hover:bg-white"
           >
-            Zadat poptávku
+            Máte dotaz? Kontaktujte mě
           </a>
         </div>
       </div>

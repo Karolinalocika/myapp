@@ -38,8 +38,7 @@ export default function ModernServicesSection() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-sky-50 relative overflow-hidden" id="sluzby">
-      
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-fuchsia-200 to-sky-50 relative overflow-hidden" id="sluzby">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-32 right-10 w-64 h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
@@ -47,21 +46,19 @@ export default function ModernServicesSection() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-white/20 mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-[white/80] backdrop-blur-sm rounded-full shadow-lg border border-white/20 mb-6">
             <Sparkles className="w-4 h-4 text-purple-500 mr-2" />
-            <span className="text-sm font-medium text-slate-700">Moje služby</span>
+            <span className="text-sm font-medium text-[#001336]">Moje služby</span>
           </div>
-          
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#001336] mb-6">
             Co vám mohu nabídnout
           </h2>
-          
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Každý projekt je pro mě příležitost vytvořit něco výjimečného. 
-            Specializuji se na originální ilustrace a grafický design.
+
+          <p className="text-xl text-[#001336] max-w-3xl mx-auto">
+            Každý projekt je pro mě příležitost vytvořit něco výjimečného. Specializuji se na originální ilustrace a grafický design.
           </p>
         </div>
 
@@ -76,7 +73,6 @@ export default function ModernServicesSection() {
               >
                 {/* Service Card Content */}
                 <div className="space-y-6">
-                  
                   {/* Icon */}
                   <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${sluzba.gradient} shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110`}>
                     <IconComponent className="w-8 h-8 text-white" />
@@ -87,7 +83,7 @@ export default function ModernServicesSection() {
                     <h3 className="text-2xl font-bold text-slate-900 group-hover:text-slate-800 transition-colors">
                       {sluzba.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-[#001336] leading-relaxed">
                       {sluzba.desc}
                     </p>
                   </div>
@@ -101,18 +97,6 @@ export default function ModernServicesSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-
-                  {/* CTA */}
-                  <div className="flex items-center justify-between pt-4">
-                    <button className={`flex items-center text-transparent bg-clip-text bg-gradient-to-r ${sluzba.gradient} font-semibold group-hover:text-slate-700 transition-all duration-300`}>
-                      Zjistit více
-                      <ArrowRight className={`ml-2 w-4 h-4 text-purple-500 group-hover:translate-x-1 transition-transform`} />
-                    </button>
-                    
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${sluzba.gradient} animate-pulse`}></div>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Hover Glow Effect */}
@@ -125,12 +109,18 @@ export default function ModernServicesSection() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <a
+              href="/kontakt"
+              className="px-8 py-4 bg-[linear-gradient(40deg,theme(colors.fuchsia.300),theme(colors.purple.400),theme(colors.fuchsia.500))] text-[#001336] rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            >
               Konzultace zdarma
-            </button>
-            <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl border border-white/40 transition-all duration-300 transform hover:scale-105 hover:bg-white">
+            </a>
+            <a
+              href="/portfolio"
+              className="px-8 py-4 bg-white/80 backdrop-blur-sm text-[#001336] rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl border border-white/40 transition-all duration-300 transform hover:scale-105 hover:bg-white"
+            >
               Zobrazit portfolio
-            </button>
+            </a>
           </div>
         </div>
       </div>

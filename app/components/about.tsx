@@ -1,60 +1,80 @@
-import React from "react";
+import React from 'react';
+import { Sparkles, ChevronRight } from 'lucide-react';
 
-export default function About() {
+export default function AboutMeSection() {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white px-6">
-      <div className="max-w-4xl mx-auto text-center mb-16">
-        <h2 className="text-5xl font-bold text-gray-800 mb-4">O mně</h2>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Jmenuji se Karolína a tvořím ilustrace, které spojují emoci, funkčnost a hravost.
-          Kreslení je pro mě nejen práce, ale způsob, jak vyprávět příběhy, jak komunikovat.
-        </p>
+    <section
+      id="o-mne"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-fuchsia-100 to-sky-50 overflow-hidden"
+    >
+      {/* Background decorative blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-10 left-1/3 w-72 h-72 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full filter blur-3xl opacity-30 animate-pulse" />
+        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-200 to-blue-200 rounded-full filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Obrázek maskota / autoportrét */}
-        <div className="flex justify-center md:justify-end">
-          <img
-            src="/shepardu.svg" // nahraď reálným obrázkem
-            alt="Maskot nebo autoportrét"
-            className="w-72 h-72 object-contain rounded-full border-8 border-white shadow-xl bg-white"
-          />
+      <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
+        {/* Mascot at top */}
+        <div className="mb-8">
+          <span className="inline-block p-4 bg-white/80 rounded-full shadow-lg">
+            <img
+              src="/cattle.svg"
+              alt="Maskot Karolíny"
+              className="w-40 h-40 object-contain"
+            />
+          </span>
         </div>
 
-        {/* Textový profil */}
-        <div className="text-left">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Ilustrátorka s vášní pro detail a dojem</h3>
-          <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-            Od dětství jsem si kreslila, co mě po světě zaujalo, nebo jak by mohlo vypadat v mých očích. Dnes to hezké a pozitivní pomáhám vytvářet ostatním – značkám, podnikatelům, kulturním projektům i jednotlivcům.
+        {/* Header and intro text */}
+        <div className="space-y-4 px-4 mb-12">
+          <Sparkles className="text-purple-500 w-6 h-6 mx-auto animate-pulse" />
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#001336] leading-tight">
+            Jsem Karolína,<br /> grafická designérka<br /> a ilustrátorka
+          </h2>
+          <p className="mt-2 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Věnuji se tvorbě log, tiskovin, grafických příspěvků a ilustraci. Mým cílem je vytvořit
+            vám vizuální identitu, která odráží osobnost a hodnoty vašeho projektu, nebo<br /> v rámci vaší značky pracovat na další vizuální prezentaci.
           </p>
-
-          <h4 className="text-xl font-medium text-gray-800 mb-2 mt-6">Co tvořím</h4>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>Ilustrace na míru – od logotypů po plakáty</li>
-            <li>Statický obsah pro sociální sítě </li>
-            <li>Ručně kreslené prvky pro weby, e-shopy a blogy</li>
-            <li>Originální vizuální identita a moodboardy</li>
-          </ul>
-
-          <h4 className="text-xl font-medium text-gray-800 mb-2 mt-6">Můj přístup</h4>
-          <p className="text-gray-700 leading-relaxed">
-            Každý projekt beru osobně. Pracuji s respektem k zadání, ale nebojím se navrhnout nové úhly pohledu. 
-            Věřím, že vizuál není jen “hezký obrázek”, ale nositel atmosféry, hodnot a emoce.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Absolvovala jsem SPŠ a VOŠ grafickou v Praze se zaměřením na propagační výtvarnictví a knižní grafiku.
           </p>
         </div>
-      </div>
 
-      {/* Podsekce / výzva k akci */}
-      <div className="max-w-4xl mx-auto text-center mt-20">
-        <p className="text-lg text-gray-600 mb-6">
-          Máte projekt, který by ožil díky ilustraci? Nebo jen chcete vytvořit něco výjimečného?
-        </p>
-        <a
-          href="#contact"
-          className="inline-block bg-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-800 transition"
-        >
-          Napište mi
-        </a>
+        {/* Divider graphic */}
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded mb-8" />
+
+        {/* Tools with icons */}
+        <div className="flex flex-wrap justify-center gap-8 px-6 mb-10">
+          {[
+            { src: '/icons/affinitydesigner.png', alt: 'Affinity Designer' },
+            { src: '/icons/affinityphoto.png', alt: 'Affinity Photo' },
+
+          ].map((tool, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <img src={tool.src} alt={tool.alt} className="w-12 h-12 mb-2" />
+              <span className="text-sm text-[#001336]">{tool.alt}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Second divider */}
+        <div className="w-16 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded mb-8" />
+
+        {/* Collaboration process */}
+        <div className="space-y-6 px-6 text-left sm:text-center">
+          {[
+            'Konzultace k definici cílů a stylu projektu',
+            'Vytvoření moodboardu, skic a prvků, s nimiž je třeba počítat',
+            'Vytvoření návrhu',
+            'Příprava finálních podkladů v potřebných formátech (PDF, SVG, PNG, WEBP atp.)',
+            'Podpora i po dokončení projektu pro úpravy a rozšíření grafiky',
+          ].map((step, i) => (
+            <p key={i} className="flex items-start max-w-3xl mx-auto text-slate-600 text-lg">
+              <ChevronRight className="w-5 h-5 text-fuchsia-500 mr-3 mt-1" />
+              {step}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   );

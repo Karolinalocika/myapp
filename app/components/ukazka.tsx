@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Sparkles } from 'lucide-react';
 
 type WorkCategory = {
   title: string;
@@ -10,61 +11,79 @@ type WorkCategory = {
 
 const portfolioData: WorkCategory[] = [
   {
-    title: "Ilustrace na míru",
+    title: 'Ilustrace na míru',
     works: [
-      { title: "Portrét", img: "https://via.placeholder.com/600x400?text=Portrét" },
-      { title: "Zvířecí ilustrace", img: "https://via.placeholder.com/600x400?text=Zvíře" },
-      { title: "Postava", img: "https://via.placeholder.com/600x400?text=Postava" },
-      { title: "Scéna", img: "https://via.placeholder.com/600x400?text=Scéna" },
+      { title: 'Osobní novoročenky mýtické', img: 'doportfolia/ctverecpfmyticke.webp' },
+      { title: 'Zvířecí ilustrace', img: 'doportfolia/garajaka.webp' },
+      { title: 'Svatební oznámení', img: 'https://via.placeholder.com/600?text=Postava' },
+      { title: 'Návrh ilustrovaného leporela', img: 'doportfolia/leporelocervotoc.webp' },
+      { title: 'Tématická ilustrace', img: 'doportfolia/ctverecrepliconplacky.webp' },
+      { title: 'Tiskoviny s portrétní ilustrací', img: 'https://via.placeholder.com/600?text=Postava' },
     ],
   },
   {
-    title: "Tvorba vizuální identity",
+    title: 'Logo',
     works: [
-      { title: "Logo návrh", img: "https://via.placeholder.com/600x400?text=Logo" },
-      { title: "Barevná paleta", img: "https://via.placeholder.com/600x400?text=Paleta" },
-      { title: "Typografie", img: "https://via.placeholder.com/600x400?text=Fonty" },
-      { title: "Branding", img: "https://via.placeholder.com/600x400?text=Brand" },
+      { title: 'Logo Autodoprava Novotný', img: 'doportfolia/ctvereclogonovotny.webp' },
+      { title: 'Manuál', img: 'https://via.placeholder.com/600?text=Paleta' },
+      { title: 'Tiskoviny pro kadeřnický salón', img: 'doportfolia/letakylafa.webp' },
+      { title: 'Branding', img: 'https://via.placeholder.com/600?text=Brand' },
     ],
   },
   {
-    title: "Obsah pro sociální sítě",
+    title: 'Obsah pro sociální sítě',
     works: [
-      { title: "Instagram post", img: "https://via.placeholder.com/600x400?text=IG+Post" },
-      { title: "Stories", img: "https://via.placeholder.com/600x400?text=Stories" },
-      { title: "Reklamní banner", img: "https://via.placeholder.com/600x400?text=Banner" },
-      { title: "Ilustrovaný citát", img: "https://via.placeholder.com/600x400?text=Citát" },
+      { title: 'Propojené Instagram posty', img: 'doportfolia/ctverecIGposty3.webp' },
+      { title: 'Stories', img: 'https://via.placeholder.com/600?text=Stories' },
+      { title: 'Reklamní banner', img: 'https://via.placeholder.com/600?text=Banner' },
+      { title: 'Ilustrovaný citát', img: 'doportfolia/4sebevedomi.jpg' },
+    ],
+  },
+  {
+    title: 'Volná tvorba',
+    works: [
+      { title: 'Obraz jako svatební dar', img: 'doportfolia/ctverecobrproK.webp' },
+      { title: 'Obraz jako cestovní vzpomínka', img: 'doportfolia/ctverecobrmexiko.webp' },
+      { title: 'Malba na keramice', img: 'https://via.placeholder.com/600?text=Keramika' },
+      { title: 'Další práce', img: 'doportfolia/' },
     ],
   },
 ];
 
-export default function Portfolio() {
+export default function PortfolioStyledSection() {
   return (
-    <section id="portfolio" className="py-20 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gray-800">
-          Ukázky Prací
-        </h2>
+    <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-white/20 mb-4">
+            <Sparkles className="w-4 h-4 text-purple-500 mr-2" />
+            <span className="text-sm font-medium text-[#001336]">Ukázka práce</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#001336]">
+            Prezentace dokončených prací
+          </h2>
+        </div>
 
-        {portfolioData.map((category, catIndex) => (
-          <div key={catIndex} className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
+        {/* Categories */}
+        {portfolioData.map((category, catIdx) => (
+          <div key={catIdx} className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[#001336]">
               {category.title}
             </h3>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {category.works.map((work, workIndex) => (
+              {category.works.map((work, workIdx) => (
                 <div
-                  key={workIndex}
-                  className="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition"
+                  key={workIdx}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg transition-shadow duration-300 hover:shadow-2xl"
                 >
                   <img
                     src={work.img}
                     alt={work.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="p-4">
-                    <p className="font-medium text-gray-800">{work.title}</p>
+                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                    <p className="text-sm font-medium text-white">{work.title}</p>
                   </div>
                 </div>
               ))}

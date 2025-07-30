@@ -41,19 +41,31 @@ export default function ModernContactForm() {
     
     setFormStatus("loading");
 
-    // Simulace API call
     try {
-      // Simulace delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Simulace úspěšného odeslání
-      setFormStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      
-      // Reset status po 5 sekundách
-      setTimeout(() => setFormStatus("idle"), 5000);
+      // Volání vašeho API endpointu
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setFormStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setFormStatus("idle"), 5000);
+      } else {
+        const errorData = await response.json();
+        console.error('API Error:', errorData);
+        throw new Error(errorData.message || 'Chyba při odesílání');
+      }
     } catch (err) {
-      console.error("Chyba:", err);
+      console.error("Chyba při odesílání:", err);
       setFormStatus("error");
       setTimeout(() => setFormStatus("idle"), 5000);
     }
@@ -93,20 +105,15 @@ export default function ModernContactForm() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           
+                
           {/* Left Side - Profile & Contact Info */}
           <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 hover:shadow-2xl transition-all duration-500">
             <div className="text-center space-y-6">
-              
               {/* Profile Image */}
               <div className="relative inline-block">
                 <div className="w-32 h-32 mx-auto relative">
-                  <img
-                    src="/shepardu.svg"
-                    alt="Karolína Jurečka Krobová"
-                    className="w-full h-full rounded-full object-cover shadow-2xl ring-4 ring-white/50"
-                  />
-                  <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full shadow-lg flex items-center justify-center">
-                    <User className="w-5 h-5 text-white" />
+                  <div className="w-full h-full rounded-full overflow-hidden shadow-2xl ring-4 ring-white/50">
+                    <img src="/cattle.svg" alt="Cattle" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -121,19 +128,25 @@ export default function ModernContactForm() {
 
               {/* Contact Details */}
               <div className="space-y-4 pt-6">
-                <div className="flex items-center justify-center space-x-3 p-4 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-2xl border border-sky-100/50">
-                  <div className="p-2 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-xl shadow-lg">
+                <a 
+                  href="tel:+420777123456"
+                  className="flex items-center justify-center space-x-3 p-4 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-2xl border border-sky-100/50 hover:from-sky-100 hover:to-cyan-100 transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="p-2 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Phone className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-slate-700 font-medium">+420 777 123 456</span>
-                </div>
+                  <span className="text-slate-700 font-medium">+420 604 411 437</span>
+                </a>
                 
-                <div className="flex items-center justify-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100/50">
-                  <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg">
+                <a 
+                  href="mailto:karolina@email.cz"
+                  className="flex items-center justify-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100/50 hover:from-purple-100 hover:to-pink-100 transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-slate-700 font-medium">karolina@email.cz</span>
-                </div>
+                  <span className="text-slate-700 font-medium">karolina.krob@gmail.com</span>
+                </a>
               </div>
 
               {/* Quote */}
@@ -148,6 +161,13 @@ export default function ModernContactForm() {
           {/* Right Side - Contact Form */}
           <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 hover:shadow-2xl transition-all duration-500">
             <div className="space-y-6">
+              
+              {/* Info Box */}
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-100/50">
+                <p className="text-green-700 text-sm">
+                  <strong>✓ Připojeno:</strong> Formulář je připojen k Gmail API pro automatické odesílání zpráv.
+                </p>
+              </div>
               
               {/* Name Field */}
               <div className="space-y-2">
@@ -237,33 +257,10 @@ export default function ModernContactForm() {
                 <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-red-50 to-rose-50 rounded-2xl border border-red-200/50">
                   <AlertCircle className="w-6 h-6 text-red-500" />
                   <p className="text-red-700 font-medium">
-                    Došlo k chybě. Zkuste to prosím znovu nebo mě kontaktujte přímo.
+                    Došlo k chybě při odesílání. Zkuste to prosím znovu nebo mě kontaktujte přímo.
                   </p>
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="text-center mt-16">
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Rychlá odpověď zaručena
-            </h3>
-            <p className="text-slate-600 mb-6">
-              Obvykle odpovídám do 24 hodin. Pro urgentní projekty mě neváhejte kontaktovat telefonicky.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <div className="px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full text-sm font-medium text-slate-700">
-                ⚡ Rychlá odpověď
-              </div>
-              <div className="px-4 py-2 bg-gradient-to-r from-sky-100 to-cyan-100 rounded-full text-sm font-medium text-slate-700">
-                💬 Nezávazná konzultace
-              </div>
-              <div className="px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full text-sm font-medium text-slate-700">
-                🎨 Návrh na míru
-              </div>
             </div>
           </div>
         </div>
