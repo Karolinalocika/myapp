@@ -64,7 +64,7 @@ export default function ModernSocialProof() {
               <div className="text-slate-700 text-sm">Průměrné hodnocení</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-slate-900 mb-1">50+</div>
+              <div className="text-4xl font-bold text-slate-900 mb-1">30+</div>
               <Users className="w-8 h-8 text-purple-500 mx-auto mb-2" />
               <div className="text-slate-700 text-sm">Spokojených klientů</div>
             </div>

@@ -124,7 +124,7 @@ export default function ModernHeroIllustrator() {
             <div className="text-slate-700">Spokojených klientů</div>
           </div>
           <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40 text-center">
-            <div className="text-3xl font-bold text-slate-900 mb-2">50+</div>
+            <div className="text-3xl font-bold text-slate-900 mb-2">40+</div>
             <div className="text-slate-700">Dokončených projektů</div>
           </div>
           <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40 text-center">

@@ -14,38 +14,37 @@ const portfolioData: WorkCategory[] = [
     title: 'Ilustrace na míru',
     works: [
       { title: 'Osobní novoročenky mýtické', img: 'doportfolia/ctverecpfmyticke.webp' },
+      { title: 'Tiskoviny s portrétní ilustrací', img: 'doportfolia/ctvereckp2025.webp' },
+      { title: 'Svatební oznámení', img: 'doportfolia/ctverecsvatebko.webp' },
       { title: 'Zvířecí ilustrace', img: 'doportfolia/garajaka.webp' },
-      { title: 'Svatební oznámení', img: 'https://via.placeholder.com/600?text=Postava' },
       { title: 'Návrh ilustrovaného leporela', img: 'doportfolia/leporelocervotoc.webp' },
       { title: 'Tématická ilustrace', img: 'doportfolia/ctverecrepliconplacky.webp' },
-      { title: 'Tiskoviny s portrétní ilustrací', img: 'https://via.placeholder.com/600?text=Postava' },
     ],
   },
   {
-    title: 'Logo',
+    title: 'Logo a firemní tiskoviny',
     works: [
       { title: 'Logo Autodoprava Novotný', img: 'doportfolia/ctvereclogonovotny.webp' },
-      { title: 'Manuál', img: 'https://via.placeholder.com/600?text=Paleta' },
+      { title: 'Logo pro stavební firmu', img: 'doportfolia/ctverecsabden.webp' },
       { title: 'Tiskoviny pro kadeřnický salón', img: 'doportfolia/letakylafa.webp' },
-      { title: 'Branding', img: 'https://via.placeholder.com/600?text=Brand' },
+      { title: 'Logo pro cukrářku', img: 'doportfolia/ctverecdorty.webp' },
     ],
   },
   {
     title: 'Obsah pro sociální sítě',
     works: [
       { title: 'Propojené Instagram posty', img: 'doportfolia/ctverecIGposty3.webp' },
-      { title: 'Stories', img: 'https://via.placeholder.com/600?text=Stories' },
-      { title: 'Reklamní banner', img: 'https://via.placeholder.com/600?text=Banner' },
-      { title: 'Ilustrovaný citát', img: 'doportfolia/4sebevedomi.jpg' },
+      { title: 'Ilustrované citáty pro golfový IG', img: 'doportfolia/ctvereccitaty.webp' },
+      { title: 'Letáky chovatelské stanice Karmapa', img: 'doportfolia/ctverecboxeri.webp' },
     ],
   },
   {
     title: 'Volná tvorba',
     works: [
       { title: 'Obraz jako svatební dar', img: 'doportfolia/ctverecobrproK.webp' },
-      { title: 'Obraz jako cestovní vzpomínka', img: 'doportfolia/ctverecobrmexiko.webp' },
+      { title: 'Obraz jako "Cestovní vzpomínka"', img: 'doportfolia/ctverecobrmexiko.webp' },
       { title: 'Malba na keramice', img: 'https://via.placeholder.com/600?text=Keramika' },
-      { title: 'Další práce', img: 'doportfolia/' },
+      { title: '"Uvnitř džungle" obraz 50x50 cm', img: 'doportfolia/ctverecdzungle.webp' },
     ],
   },
 ];
