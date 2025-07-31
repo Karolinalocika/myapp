@@ -43,7 +43,7 @@ const portfolioData: WorkCategory[] = [
     works: [
       { title: 'Obraz jako svatební dar', img: 'doportfolia/ctverecobrproK.webp' },
       { title: 'Obraz jako "Cestovní vzpomínka"', img: 'doportfolia/ctverecobrmexiko.webp' },
-      { title: 'Malba na keramice', img: 'https://via.placeholder.com/600?text=Keramika' },
+      { title: 'Malba na keramice', img: 'doportfolia/ctvereckeramika.webp' },
       { title: '"Uvnitř džungle" obraz 50x50 cm', img: 'doportfolia/ctverecdzungle.webp' },
     ],
   },
