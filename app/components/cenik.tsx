@@ -114,7 +114,7 @@ export default function PricingStyledSection() {
         <div className="text-center mt-16">
           <a
             href="/kontakt"
-            className="px-8 py-4 bg-white/80 backdrop-blur-sm text-[#001336] rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl border border-white/40 transition-all duration-300 transform hover:scale-105 hover:bg-white"
+            className="px-8 py-4 bg-gradient-to-tr from-fuchsia-300 via-purple-400 to-fuchsia-500 text-[#001336] rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
           >
             Máte dotaz? Kontaktujte mě
           </a>

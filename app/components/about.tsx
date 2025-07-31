@@ -7,11 +7,7 @@ export default function AboutMeSection() {
       id="o-mne"
       className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-fuchsia-100 to-sky-50 overflow-hidden"
     >
-      {/* Background decorative blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-1/3 w-72 h-72 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full filter blur-3xl opacity-30 animate-pulse" />
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-200 to-blue-200 rounded-full filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
+    
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
         {/* Mascot at top */}
