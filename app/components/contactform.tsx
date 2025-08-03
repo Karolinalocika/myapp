@@ -171,7 +171,7 @@ export default function ModernContactForm() {
                 {/* Social Icons */}
                 <div className="flex justify-center space-x-4 pt-4">
                   <a
-                    href="https://www.facebook.com/woofik"
+                    href="https://www.facebook.com/media/set/?vanity=woofik&set=a.10237926999503650"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-white/80 rounded-full shadow hover:bg-white transition"
