@@ -10,6 +10,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { motion, AnimatePresence, Variants, Transition } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const loopEase: Transition["ease"] = "linear";
 const pulseEase: Transition["ease"] = "easeInOut";
@@ -41,6 +43,7 @@ export default function ModernHeroIllustrator() {
   const [currentService, setCurrentService] = useState(0);
   const CurrentIcon = services[currentService].icon;
 
+  // Cycle services
   useEffect(() => {
     const iv = setInterval(
       () => setCurrentService((i) => (i + 1) % services.length),
@@ -48,6 +51,15 @@ export default function ModernHeroIllustrator() {
     );
     return () => clearInterval(iv);
   }, [services.length]);
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  }, []);
 
   return (
     <section
@@ -64,7 +76,10 @@ export default function ModernHeroIllustrator() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg mb-6">
+        <h1
+          data-aos="fade-up"
+          className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg mb-6"
+        >
           Vytvořím vám
         </h1>
 
@@ -97,7 +112,10 @@ export default function ModernHeroIllustrator() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+        <div
+          data-aos="fade-up"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+        >
           <Link
             href="/portfolio"
             className="group relative px-8 py-4 bg-gradient-to-tr from-fuchsia-300 via-purple-400 to-fuchsia-500 text-[#001336] rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
@@ -119,18 +137,19 @@ export default function ModernHeroIllustrator() {
 
         {/* Social Proof */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40 text-center">
-            <div className="text-3xl font-bold text-slate-900 mb-2">30+</div>
-            <div className="text-slate-700">Spokojených klientů</div>
-          </div>
-          <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40 text-center">
-            <div className="text-3xl font-bold text-slate-900 mb-2">40+</div>
-            <div className="text-slate-700">Dokončených projektů</div>
-          </div>
-          <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40 text-center">
-            <div className="text-3xl font-bold text-slate-900 mb-2">5★</div>
-            <div className="text-slate-700">Průměrné hodnocení</div>
-          </div>
+          {[
+            { value: "30+", label: "Spokojených klientů" },
+            { value: "40+", label: "Dokončených projektů" },
+            { value: "5★", label: "Průměrné hodnocení" },
+          ].map(({ value, label }, i) => (
+            <div
+              key={i}
+              className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40 text-center"
+            >
+              <div className="text-3xl font-bold text-slate-900 mb-2">{value}</div>
+              <div className="text-slate-700">{label}</div>
+            </div>
+          ))}
         </div>
       </div>
 
