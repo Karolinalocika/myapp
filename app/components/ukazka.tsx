@@ -1,5 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 type WorkCategory = {
   title: string;
@@ -50,8 +54,20 @@ const portfolioData: WorkCategory[] = [
 ];
 
 export default function PortfolioStyledSection() {
+  useEffect(() => {
+    AOS.init({
+      // zpomalíme a zjemníme animaci
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+    });
+  }, []);
+
   return (
-    <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section
+      id="portfolio"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
@@ -67,7 +83,13 @@ export default function PortfolioStyledSection() {
         {/* Categories */}
         {portfolioData.map((category, catIdx) => (
           <div key={catIdx} className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[#001336]">
+            <h3
+              data-aos="fade-right"
+              // pomalejší, plynulejší nájezd
+              data-aos-duration="1000"
+              data-aos-easing="ease-out-cubic"
+              className="text-2xl md:text-3xl font-semibold mb-6 text-[#2AA198]"
+            >
               {category.title}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

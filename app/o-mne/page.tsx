@@ -51,7 +51,7 @@ export default function AboutPage() {
     <div className="bg-white text-black flex flex-col min-h-screen w-full">
       <Navbar />
 
-      <main className="pt-16 flex-grow w-full p-8">
+      <main className=" flex-grow w-full ">
         <About />
       </main>
 
