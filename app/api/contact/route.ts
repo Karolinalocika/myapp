@@ -126,7 +126,7 @@ function getConfirmationEmailTemplate(name: string): string {
           
           <!-- Profile Card -->
           <div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 20px; padding: 32px; margin-bottom: 30px; text-align: center;">
-            <img src="/cattle.png" alt="Maskot" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 24px; display: block;" />
+            <img src="public/cattle.png" alt="Maskot" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 24px; display: block;" />
             <h3 style="color: #1e293b; margin: 0 0 8px 0; font-size: 24px; font-weight: bold;">Karolína Jurečka Krobová</h3>
             <p style="color: #64748b; margin: 0 0 24px 0; font-size: 16px; font-style: italic;">Ilustrátorka & Grafická designérka</p>
             
