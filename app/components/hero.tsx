@@ -128,7 +128,7 @@ export default function ModernHeroIllustrator() {
           </Link>
 
           <Link
-            href="#kontakt"
+            href="/kontakt"
             className="px-8 py-4 bg-white/90 backdrop-blur-sm text-[#001336] rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl border border-white/50 transition-all duration-300 transform hover:scale-105 hover:bg-white"
           >
             Nezávazná konzultace

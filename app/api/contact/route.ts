@@ -108,7 +108,7 @@ function getConfirmationEmailTemplate(name: string): string {
         
         <!-- Header -->
         <div style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); padding: 50px 30px; text-align: center; position: relative;">
-          <div style="background: rgba(255,255,255,0.1); width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 36px;">
+          <div style="background: rgba(255,255,255,0.1); width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; line-height: 80px; text-align: center; font-size: 36px; color: white;">
             ✨
           </div>
           <h1 style="color: white; margin: 0; font-size: 32px; font-weight: bold;">Děkuji za zprávu!</h1>
@@ -126,9 +126,7 @@ function getConfirmationEmailTemplate(name: string): string {
           
           <!-- Profile Card -->
           <div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 20px; padding: 32px; margin-bottom: 30px; text-align: center;">
-            <div style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px; font-weight: bold;">
-              K
-            </div>
+            <img src="/cattle.png" alt="Maskot" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 24px; display: block;" />
             <h3 style="color: #1e293b; margin: 0 0 8px 0; font-size: 24px; font-weight: bold;">Karolína Jurečka Krobová</h3>
             <p style="color: #64748b; margin: 0 0 24px 0; font-size: 16px; font-style: italic;">Ilustrátorka & Grafická designérka</p>
             
@@ -143,36 +141,30 @@ function getConfirmationEmailTemplate(name: string): string {
           <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 24px; margin-bottom: 30px;">
             <h3 style="color: #1e293b; margin: 0 0 20px 0; font-size: 18px; text-align: center;">📞 Kontaktní údaje</h3>
             
-            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 16px;">
-              <div style="text-align: center; min-width: 140px;">
-                <div style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
-                  📞
-                </div>
-                <p style="margin: 0; color: #64748b; font-size: 14px;">Telefon</p>
-                <p style="margin: 4px 0 0 0; color: #1e293b; font-weight: 600;">+420 777 123 456</p>
-              </div>
-              
-              <div style="text-align: center; min-width: 140px;">
-                <div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
-                  📧
-                </div>
-                <p style="margin: 0; color: #64748b; font-size: 14px;">E-mail</p>
-                <p style="margin: 4px 0 0 0; color: #1e293b; font-weight: 600;">karolina@email.cz</p>
-              </div>
-              
-              <div style="text-align: center; min-width: 140px;">
-                <div style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
-                  🌐
-                </div>
-                <p style="margin: 0; color: #64748b; font-size: 14px;">Web</p>
-                <p style="margin: 4px 0 0 0; color: #1e293b; font-weight: 600;">www.karolina-design.cz</p>
-              </div>
-            </div>
+            <table role="presentation" style="width:100%; border-spacing:0; text-align:center;">
+              <tr>
+                <td style="padding: 8px;">
+                  <div style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); width:48px; height:48px; line-height:48px; text-align:center; border-radius:12px; margin:0 auto 8px; display:block; font-size:20px; color:white;">📞</div>
+                  <p style="margin:0; color:#64748b; font-size:14px;">Telefon</p>
+                  <p style="margin:4px 0 0 0; color:#1e293b; font-weight:600;">+420 604 411 437</p>
+                </td>
+                <td style="padding: 8px;">
+                  <div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); width:48px; height:48px; line-height:48px; text-align:center; border-radius:12px; margin:0 auto 8px; display:block; font-size:20px; color:white;">📧</div>
+                  <p style="margin:0; color:#64748b; font-size:14px;">E-mail</p>
+                  <p style="margin:4px 0 0 0; color:#1e293b; font-weight:600;">karolina.krob@gmail.com</p>
+                </td>
+                <td style="padding: 8px;">
+                  <div style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); width:48px; height:48px; line-height:48px; text-align:center; border-radius:12px; margin:0 auto 8px; display:block; font-size:20px; color:white;">🌐</div>
+                  <p style="margin:0; color:#64748b; font-size:14px;">Web</p>
+                  <p style="margin:4px 0 0 0; color:#1e293b; font-weight:600;"><a href="https://www.woofdesign.art/" style="color:#1e293b; text-decoration:none;">www.woofdesign.art</a></p>
+                </td>
+              </tr>
+            </table>
           </div>
           
           <!-- CTA -->
           <div style="text-align: center; margin-bottom: 30px;">
-            <a href="https://www.karolina-design.cz" style="display: inline-block; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); color: white; padding: 16px 32px; border-radius: 16px; text-decoration: none; font-weight: 600; font-size: 16px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+            <a href="https://www.woofdesign.art/portfolio" style="display: inline-block; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); color: white; padding: 16px 32px; border-radius: 16px; text-decoration: none; font-weight: 600; font-size: 16px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
               🎨 Prohlédnout portfolio
             </a>
           </div>
