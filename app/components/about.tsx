@@ -48,15 +48,11 @@ export default function AboutMeSection() {
             <span className="font-semibold text-[#6100B0]">ilustraci</span>. Mým
             cílem je vytvořit vám{' '}
             <span className="font-semibold text-[#6100B0]">vizuální identitu</span>, která odráží{' '}
-            <span className="font-semibold text-[#6100B0]">osobnost</span> a{' '}
-            <span className="font-semibold text-[#6100B0]">hodnoty</span> vašeho
+            <span className="font-semibold text-[#6100B0]">osobnost a hodnoty</span> vašeho
             projektu.
           </p>
           <p>
-            Absolvovala jsem{' '}
-            <span className="font-semibold text-[#6100B0]">
-              SPŠ a VOŠ grafickou
-            </span>{' '}
+            Absolvovala jsem SPŠ a VOŠ grafickou
             v Praze se zaměřením na{' '}
             <span className="font-semibold text-[#6100B0]">
               propagační výtvarnictví
@@ -66,8 +62,7 @@ export default function AboutMeSection() {
           </p>
           <p>
             V grafické práci se snažím o{' '}
-            <span className="font-semibold text-[#6100B0]">originální</span> a{' '}
-            <span className="font-semibold text-[#6100B0]">autorskou tvorbu</span>, protože{' '}
+            <span className="font-semibold text-[#6100B0]">originální a autorskou tvorbu</span>, protože{' '}
             <span className="font-semibold text-[#6100B0]">logo navržené na míru</span> je
             zásadním prvkem{' '}
             <span className="font-semibold text-[#6100B0]">vizuální identity</span>.

@@ -160,7 +160,7 @@ export default function ModernContactForm() {
                   href="mailto:karolina.krob@gmail.com"
                   className="flex items-center justify-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100/50 hover:from-purple-100 hover:to-pink-100 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-2 bg-gradient-to-tr from-fuchsia-300 via-purple-400 to-fuchsia-500 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-slate-700 font-medium">
@@ -268,7 +268,7 @@ export default function ModernContactForm() {
                 className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2 ${
                   formStatus === 'loading'
                     ? 'bg-slate-400 text-white cursor-not-allowed'
-                    : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white'
+                    : 'bg-gradient-to-tr from-fuchsia-300 via-purple-400 to-fuchsia-500 text-[#001336]'
                 }`}
               >
                 {formStatus === 'loading' ? (
