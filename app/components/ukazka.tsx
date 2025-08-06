@@ -22,7 +22,9 @@ const portfolioData: WorkCategory[] = [
       { title: 'Svatební oznámení', img: 'doportfolia/ctverecsvatebko.webp' },
       { title: 'Zvířecí ilustrace', img: 'doportfolia/garajaka.webp' },
       { title: 'Návrh ilustrovaného leporela', img: 'doportfolia/leporelocervotoc.webp' },
+      { title: 'Svatební oznámení', img: 'doportfolia/ctsvatbakk.webp' },
       { title: 'Tématická ilustrace', img: 'doportfolia/ctverecrepliconplacky.webp' },
+      { title: 'Svatební oznámení s dobarvovaným dřevorytem', img: 'doportfolia/ctsvatbaviol.webp' },
     ],
   },
   {
@@ -35,11 +37,12 @@ const portfolioData: WorkCategory[] = [
     ],
   },
   {
-    title: 'Obsah pro sociální sítě',
+    title: 'Obsah pro sociální sítě a web',
     works: [
       { title: 'Propojené Instagram posty', img: 'doportfolia/ctverecIGposty3.webp' },
       { title: 'Ilustrované citáty pro golfový IG', img: 'doportfolia/ctvereccitaty.webp' },
       { title: 'Letáky chovatelské stanice Karmapa', img: 'doportfolia/ctverecboxeri.webp' },
+      { title: 'Návrh webových stránek', img: 'doportfolia/webpruvod.webp' },
     ],
   },
   {
