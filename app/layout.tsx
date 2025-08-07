@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Montserrat_Alternates } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "./components/CookieBanner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const montserratAlt = Montserrat_Alternates({
   variable: "--font-montserrat-alt",
@@ -14,7 +16,6 @@ const montserratAlt = Montserrat_Alternates({
 });
 
 export const metadata: Metadata = {
-  // základní titulky
   title: {
     default: "Woofdesign – grafický design & ilustrace na míru",
     template: "%s | Woofdesign"
@@ -36,26 +37,18 @@ export const metadata: Metadata = {
     { name: "Karolína Jurečka Krobová", url: "https://www.woofdesign.art" }
   ],
   creator: "Karolína Jurečka Krobová",
-
-  // ikony
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png"
   },
-
-  // barva prohlížeče/předvolba motivu
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "#001336" }
   ],
-
-  // mobilní viewport
   viewport: {
     width: "device-width",
     initialScale: 1
   },
-
-  // Open Graph pro sdílení
   openGraph: {
     title: "Woofdesign – grafický design & ilustrace na míru",
     description:
@@ -73,8 +66,6 @@ export const metadata: Metadata = {
     locale: "cs_CZ",
     type: "website"
   },
-
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
     title: "Woofdesign – grafický design & ilustrace na míru",
@@ -83,8 +74,6 @@ export const metadata: Metadata = {
     creator: "@karolina_krobova",
     images: ["https://www.woofdesign.art/hlavnistranka.webp"]
   },
-
-  // pokyny pro roboty
   robots: {
     index: true,
     follow: true,
@@ -108,6 +97,10 @@ export default function RootLayout({
       <body className={`${montserratAlt.variable} font-sans antialiased`}>
         {children}
         <CookieBanner />
+        {/* Vercel Web Analytics */}
+        <Analytics />
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </body>
     </html>
   );
